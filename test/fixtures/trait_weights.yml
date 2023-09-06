@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  career: one
+  Trait1_weight: MyString
+  Trait2_weight: MyString
+  Trait3_weight: MyString
+  Trait4_weight: MyString
+  Trait5_weight: MyString
+  Trait6_weight: MyString
+
+two:
+  career: two
+  Trait1_weight: MyString
+  Trait2_weight: MyString
+  Trait3_weight: MyString
+  Trait4_weight: MyString
+  Trait5_weight: MyString
+  Trait6_weight: MyString
