@@ -7,7 +7,6 @@ one:
   about_me: MyString
   user: one
   photo: MyString
-  string: MyString
 
 two:
   first_name: MyString
@@ -16,4 +15,3 @@ two:
   about_me: MyString
   user: two
   photo: MyString
-  string: MyString

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Trait weights</h1>
+
+<div id="trait_weights">
+  <% @trait_weights.each do |trait_weight| %>
+    <%= render trait_weight %>
+    <p>
+      <%= link_to "Show this trait weight", trait_weight %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New trait weight", new_trait_weight_path %>

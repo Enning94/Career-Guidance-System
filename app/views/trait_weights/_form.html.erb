@@ -1,0 +1,52 @@
+<%= form_with(model: trait_weight) do |form| %>
+  <% if trait_weight.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(trait_weight.errors.count, "error") %> prohibited this trait_weight from being saved:</h2>
+
+      <ul>
+        <% trait_weight.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :career_id, style: "display: block" %>
+    <%= form.text_field :career_id %>
+  </div>
+
+  <div>
+    <%= form.label :Trait1_weight, style: "display: block" %>
+    <%= form.text_field :Trait1_weight %>
+  </div>
+
+  <div>
+    <%= form.label :Trait2_weight, style: "display: block" %>
+    <%= form.text_field :Trait2_weight %>
+  </div>
+
+  <div>
+    <%= form.label :Trait3_weight, style: "display: block" %>
+    <%= form.text_field :Trait3_weight %>
+  </div>
+
+  <div>
+    <%= form.label :Trait4_weight, style: "display: block" %>
+    <%= form.text_field :Trait4_weight %>
+  </div>
+
+  <div>
+    <%= form.label :Trait5_weight, style: "display: block" %>
+    <%= form.text_field :Trait5_weight %>
+  </div>
+
+  <div>
+    <%= form.label :Trait6_weight, style: "display: block" %>
+    <%= form.text_field :Trait6_weight %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

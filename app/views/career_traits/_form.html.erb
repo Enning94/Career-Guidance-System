@@ -1,0 +1,27 @@
+<%= form_with(model: career_trait) do |form| %>
+  <% if career_trait.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(career_trait.errors.count, "error") %> prohibited this career_trait from being saved:</h2>
+
+      <ul>
+        <% career_trait.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :career_id, style: "display: block" %>
+    <%= form.text_field :career_id %>
+  </div>
+
+  <div>
+    <%= form.label :personality_trait_id, style: "display: block" %>
+    <%= form.text_field :personality_trait_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
