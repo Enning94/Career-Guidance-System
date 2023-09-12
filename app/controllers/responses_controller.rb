@@ -1,5 +1,5 @@
 class ResponsesController < ApplicationController
-  before_action :set_response, only: %i[ show edit update destroy ]
+  before_action :set_response, only: %i[show edit update destroy]
 
   # GET /responses or /responses.json
   def index
@@ -7,8 +7,7 @@ class ResponsesController < ApplicationController
   end
 
   # GET /responses/1 or /responses/1.json
-  def show
-  end
+  def show; end
 
   # GET /responses/new
   def new
@@ -16,8 +15,7 @@ class ResponsesController < ApplicationController
   end
 
   # GET /responses/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /responses or /responses.json
   def create
@@ -25,7 +23,7 @@ class ResponsesController < ApplicationController
 
     respond_to do |format|
       if @response.save
-        format.html { redirect_to response_url(@response), notice: "Response was successfully created." }
+        format.html { redirect_to response_url(@response), notice: 'Response was successfully created.' }
         format.json { render :show, status: :created, location: @response }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class ResponsesController < ApplicationController
   def update
     respond_to do |format|
       if @response.update(response_params)
-        format.html { redirect_to response_url(@response), notice: "Response was successfully updated." }
+        format.html { redirect_to response_url(@response), notice: 'Response was successfully updated.' }
         format.json { render :show, status: :ok, location: @response }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +50,20 @@ class ResponsesController < ApplicationController
     @response.destroy
 
     respond_to do |format|
-      format.html { redirect_to responses_url, notice: "Response was successfully destroyed." }
+      format.html { redirect_to responses_url, notice: 'Response was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_response
-      @response = Response.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def response_params
-      params.require(:response).permit(:response, :question_id, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_response
+    @response = Response.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def response_params
+    params.require(:response).permit(:response, :question_id, :user_id)
+  end
 end

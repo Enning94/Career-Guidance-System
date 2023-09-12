@@ -1,5 +1,5 @@
 class PersonalityTraitsController < ApplicationController
-  before_action :set_personality_trait, only: %i[ show edit update destroy ]
+  before_action :set_personality_trait, only: %i[show edit update destroy]
 
   # GET /personality_traits or /personality_traits.json
   def index
@@ -7,8 +7,7 @@ class PersonalityTraitsController < ApplicationController
   end
 
   # GET /personality_traits/1 or /personality_traits/1.json
-  def show
-  end
+  def show; end
 
   # GET /personality_traits/new
   def new
@@ -16,8 +15,7 @@ class PersonalityTraitsController < ApplicationController
   end
 
   # GET /personality_traits/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /personality_traits or /personality_traits.json
   def create
@@ -25,7 +23,9 @@ class PersonalityTraitsController < ApplicationController
 
     respond_to do |format|
       if @personality_trait.save
-        format.html { redirect_to personality_trait_url(@personality_trait), notice: "Personality trait was successfully created." }
+        format.html do
+          redirect_to personality_trait_url(@personality_trait), notice: 'Personality trait was successfully created.'
+        end
         format.json { render :show, status: :created, location: @personality_trait }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,9 @@ class PersonalityTraitsController < ApplicationController
   def update
     respond_to do |format|
       if @personality_trait.update(personality_trait_params)
-        format.html { redirect_to personality_trait_url(@personality_trait), notice: "Personality trait was successfully updated." }
+        format.html do
+          redirect_to personality_trait_url(@personality_trait), notice: 'Personality trait was successfully updated.'
+        end
         format.json { render :show, status: :ok, location: @personality_trait }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +54,20 @@ class PersonalityTraitsController < ApplicationController
     @personality_trait.destroy
 
     respond_to do |format|
-      format.html { redirect_to personality_traits_url, notice: "Personality trait was successfully destroyed." }
+      format.html { redirect_to personality_traits_url, notice: 'Personality trait was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_personality_trait
-      @personality_trait = PersonalityTrait.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def personality_trait_params
-      params.require(:personality_trait).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_personality_trait
+    @personality_trait = PersonalityTrait.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def personality_trait_params
+    params.require(:personality_trait).permit(:name)
+  end
 end

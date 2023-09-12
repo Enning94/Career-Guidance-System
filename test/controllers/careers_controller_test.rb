@@ -1,45 +1,49 @@
-require "test_helper"
+require 'test_helper'
 
 class CareersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @career = careers(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get careers_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_career_url
     assert_response :success
   end
 
-  test "should create career" do
-    assert_difference("Career.count") do
-      post careers_url, params: { career: { description: @career.description, name: @career.name, skills_required: @career.skills_required } }
+  test 'should create career' do
+    assert_difference('Career.count') do
+      post careers_url,
+           params: { career: { description: @career.description, name: @career.name,
+                               skills_required: @career.skills_required } }
     end
 
     assert_redirected_to career_url(Career.last)
   end
 
-  test "should show career" do
+  test 'should show career' do
     get career_url(@career)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_career_url(@career)
     assert_response :success
   end
 
-  test "should update career" do
-    patch career_url(@career), params: { career: { description: @career.description, name: @career.name, skills_required: @career.skills_required } }
+  test 'should update career' do
+    patch career_url(@career),
+          params: { career: { description: @career.description, name: @career.name,
+                              skills_required: @career.skills_required } }
     assert_redirected_to career_url(@career)
   end
 
-  test "should destroy career" do
-    assert_difference("Career.count", -1) do
+  test 'should destroy career' do
+    assert_difference('Career.count', -1) do
       delete career_url(@career)
     end
 

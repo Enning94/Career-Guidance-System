@@ -1,5 +1,5 @@
 class CareersController < ApplicationController
-  before_action :set_career, only: %i[ show edit update destroy ]
+  before_action :set_career, only: %i[show edit update destroy]
 
   # GET /careers or /careers.json
   def index
@@ -7,8 +7,7 @@ class CareersController < ApplicationController
   end
 
   # GET /careers/1 or /careers/1.json
-  def show
-  end
+  def show; end
 
   # GET /careers/new
   def new
@@ -16,8 +15,7 @@ class CareersController < ApplicationController
   end
 
   # GET /careers/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /careers or /careers.json
   def create
@@ -25,7 +23,7 @@ class CareersController < ApplicationController
 
     respond_to do |format|
       if @career.save
-        format.html { redirect_to career_url(@career), notice: "Career was successfully created." }
+        format.html { redirect_to career_url(@career), notice: 'Career was successfully created.' }
         format.json { render :show, status: :created, location: @career }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class CareersController < ApplicationController
   def update
     respond_to do |format|
       if @career.update(career_params)
-        format.html { redirect_to career_url(@career), notice: "Career was successfully updated." }
+        format.html { redirect_to career_url(@career), notice: 'Career was successfully updated.' }
         format.json { render :show, status: :ok, location: @career }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +50,20 @@ class CareersController < ApplicationController
     @career.destroy
 
     respond_to do |format|
-      format.html { redirect_to careers_url, notice: "Career was successfully destroyed." }
+      format.html { redirect_to careers_url, notice: 'Career was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_career
-      @career = Career.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def career_params
-      params.require(:career).permit(:name, :description, :skills_required)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_career
+    @career = Career.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def career_params
+    params.require(:career).permit(:name, :description, :skills_required)
+  end
 end
