@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Trait scores</h1>
+
+<div id="trait_scores">
+  <% @trait_scores.each do |trait_score| %>
+    <%= render trait_score %>
+    <p>
+      <%= link_to "Show this trait score", trait_score %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New trait score", new_trait_score_path %>

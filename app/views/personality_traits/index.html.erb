@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Personality traits</h1>
+
+<div id="personality_traits">
+  <% @personality_traits.each do |personality_trait| %>
+    <%= render personality_trait %>
+    <p>
+      <%= link_to "Show this personality trait", personality_trait %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New personality trait", new_personality_trait_path %>

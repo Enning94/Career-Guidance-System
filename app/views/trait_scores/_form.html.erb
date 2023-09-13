@@ -1,0 +1,32 @@
+<%= form_with(model: trait_score) do |form| %>
+  <% if trait_score.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(trait_score.errors.count, "error") %> prohibited this trait_score from being saved:</h2>
+
+      <ul>
+        <% trait_score.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :score, style: "display: block" %>
+    <%= form.text_field :score %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :personality_trait_id, style: "display: block" %>
+    <%= form.text_field :personality_trait_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

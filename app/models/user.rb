@@ -1,4 +1,8 @@
 class User < ApplicationRecord
-    has_manyn :responses  
-    has_manyn :career_careers  
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+  has_many :responses
+  has_many :career_careers
 end

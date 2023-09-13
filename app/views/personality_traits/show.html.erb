@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @personality_trait %>
+
+<div>
+  <%= link_to "Edit this personality trait", edit_personality_trait_path(@personality_trait) %> |
+  <%= link_to "Back to personality traits", personality_traits_path %>
+
+  <%= button_to "Destroy this personality trait", @personality_trait, method: :delete %>
+</div>

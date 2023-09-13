@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @trait_weight %>
+
+<div>
+  <%= link_to "Edit this trait weight", edit_trait_weight_path(@trait_weight) %> |
+  <%= link_to "Back to trait weights", trait_weights_path %>
+
+  <%= button_to "Destroy this trait weight", @trait_weight, method: :delete %>
+</div>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @trait_score %>
+
+<div>
+  <%= link_to "Edit this trait score", edit_trait_score_path(@trait_score) %> |
+  <%= link_to "Back to trait scores", trait_scores_path %>
+
+  <%= button_to "Destroy this trait score", @trait_score, method: :delete %>
+</div>

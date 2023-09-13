@@ -1,11 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  text: MyString
-  string: MyString
+  text: MyText
   personality_trait: one
 
 two:
-  text: MyString
-  string: MyString
+  text: MyText
   personality_trait: two
