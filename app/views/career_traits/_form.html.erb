@@ -1,4 +1,4 @@
-<%= form_with(model: career_trait) do |form| %>
+<%= form_with(model: career_trait, url:new_career_career_trait_path, local: true) do |form| %>
   <% if career_trait.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(career_trait.errors.count, "error") %> prohibited this career_trait from being saved:</h2>
